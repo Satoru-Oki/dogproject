@@ -14,16 +14,8 @@ public class Main {
                 new JapanRugbyPlayer("セミシ・マシレワ", 184, 93, "WTB"), new JapanRugbyPlayer("松島幸太郎", 178, 87, "FB"));
 
         System.out.println("体重110㎏以上のポジション:選手名");
-        for (JapanRugbyPlayer rugbyPlayer : japanRugbyPlayerList) {
-            if (rugbyPlayer.getWeight() >= 110) {
-                System.out.println(rugbyPlayer.getPosi() + " " + rugbyPlayer.getName());
-            }
-        }
+        japanRugbyPlayerList.stream().filter(rugbyPlayer -> rugbyPlayer.getWeight() >= 110).map(rugbyPlayer -> rugbyPlayer.getPosi() + " " + rugbyPlayer.getName()).forEach(System.out::println);
         System.out.println("身長190cm以上のポジション：選手名");
-        for (JapanRugbyPlayer rugbyPlayer : japanRugbyPlayerList) {
-            if (rugbyPlayer.getHeight() >= 190) {
-                System.out.println(rugbyPlayer.getPosi() + " " + rugbyPlayer.getName());
-            }
-        }
+        japanRugbyPlayerList.stream().filter(rugbyPlayer -> rugbyPlayer.getHeight() >= 190).map(rugbyPlayer -> rugbyPlayer.getPosi() + " " + rugbyPlayer.getName()).forEach(System.out::println);
     }
 }
